@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>코로나 19 문진표</title>
+   <link href="./style.css" rel="stylesheet">
+</head>
+   
+<body>
+   <div class="questions">
+      <div class="outbox1">
+         <label style="width:80px;">이름 </label>
+         <input type="text" id="name" placeholder="이름을 입력하세요" style="width:200px;"><br>
+         <label for="phone" style="width:80px;">휴대폰번호 </label>
+         <input type="text" id="phone" placeholder="휴대폰번호(ex 010-1234-1234)" style="width:200px;"><br>
+         <label for="birth" style="width:80px;">생년월일 </label>
+         <input type="text" id="birth" placeholder="생년월일(YYMMDD) 입력하세요" style="width:200px;"><br>
+         <label for="address1" style="width:80px;">주소 </label>
+         <input type="text" id="address1" placeholder="주소를 입력하세요" style="width:400px;">
+         <input type="button" id="btn_find" onclick="wf_findClick()" value="주소찾기"><br>
+         <label for="address2" style="width:80px;"></label>
+         <input type="text" id="address2" placeholder="상세 주소를 입력하세요" style="width:400px;">
+      </div>
+      <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+      <div class="outbox2" >
+         <table id="table" >
+            <tr><th style="text-align:center;" colspan="2"><h2>해당 사항에 체크해 주세요</h2></th></tr>
+            <tr><td style="text-align:center;"><h3> 유증상 PCR <br>(급여)</h3></td>
+               <td style="text-align:left;">
+                  <label><input type="checkbox" name="chk_imp1" >발열(37.5도 이상)</label>
+                  <label><input type="checkbox" name="chk_imp1" >기침</label>
+                  <label><input type="checkbox" name="chk_imp1" >인후통</label>
+                  <label><input type="checkbox" name="chk_imp1" >오한</label>
+                  <label><input type="checkbox" name="chk_imp1" >근육통</label>
+                  <label><input type="checkbox" name="chk_imp1" >두통</label>
+                  <label><input type="checkbox" name="chk_imp1" >호흡곤란</label>
+                  <label><input type="checkbox" name="chk_imp1" >후각</label>
+                  <label><input type="checkbox" name="chk_imp1" >폐렴</label><br>
+                  <label><input type="checkbox" name="chk_imp1" >코로나19 관련 증상으로 타 요양기관에서 코로나19 진단검사 필요 소견 받은 경우(진료의뢰서 지참)</label>
+               </td>
+            </tr>
+            <tr><td style="text-align:center;"><h3> 무증상 PCR <br>(급여)</h3></td>
+               <td style="text-align:left;">
+                  <label><input type="checkbox" name="chk_imp2" >코로나19 국내 집단 발생과 역학적 연관성이 있는 경우</label><br>
+                  <label><input type="checkbox" name="chk_imp2" >해외 입국 14일 이내의 가족,친구,지인을 접촉한 경우</label><br>
+                  <label><input type="checkbox" name="chk_imp2" >가족(동거인) 또는 동일시설 생활자가 코로나19 임상증상이 있는 경우</label><br>
+                  <label><input type="checkbox" name="chk_imp2" checked="checked">지역사회 유행 양상 고려 코로나 검사 원하는 경우</label><br>
+               </td>
+            </tr>
+            <tr>
+               <td style="text-align:center;"><h3> 체온 </h3></td>
+               <td style="padding-left:10px; text-align:left;">
+                  <input type="text" name="txt_imp3" placeholder="체온" style="text-align:center;width:50px;font-size:1.1em;">
+                  <label> ℃ </label>
+               </td>   
+            </tr>
+         </table>
+      </div>
+      <div class="outbox3" style="text-align:center;">
+         <button id="trans" style="width:100px;"><h3> 전송하기 </h3></button>
+         <button id="close" onclick="wf_windowClose()" style="width:100px;"><h3> 닫기 </h3></button>
+      </div>
+   </div>
+   <script src="./script.js"></script>   
+   <div class="cube"></div>
+</body>
+</html>
